@@ -27,10 +27,11 @@ func quiz():
 	var b = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 	for i in range(1):
 		var p = randi()%12
-		var k = randi()%2
 		if !(b[p] in quiz):
 			quiz.append(b[p])
 			player_note_player.play_note(b[p])
+	for note in SM.note_to_sprite.keys():
+		SM.note_to_sprite[note].set_position(Vector2(SM.note_to_sprite[note].get_position().x, 0))
 	timer = get_node("Timer")
 	timer.set_wait_time(two_bar_sec)
 	timer.start()
