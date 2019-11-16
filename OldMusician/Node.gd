@@ -43,8 +43,7 @@ func _input(event):
 			if Input.is_action_just_pressed(key):
 				note_to_node[key].play()
 				emit_signal("note_played", key)
-				print('key', key)
-				if key in notes:
+				if note_to_sprite[key] in notes:
 					return
 				notes.append(note_to_sprite[key])
 				answer.append(key)
@@ -57,55 +56,32 @@ func _input(event):
 		t.start()
 
 func _ready():
-	#randomize()
-	#var texture = load("res://assets/speaker.png")
-	#$Speaker.texture = texture
-
 	quiz()
-
-	timer = get_node("Timer")
-	timer.set_wait_time(6)
-	timer.connect("timeout", self, "_on_Timer_timeout")
-	timer.start()
 
 func _process(delta):
 	if (timer.get_time_left() < 1.0):
-		print(answer)
-		#if "C" in answer and "E" in answer and "G" in answer:
 		if evaluation(answer):
 			$Score.text = str(int($Score.text) + 1)
 		$Label.text = str(0)
 		timer.stop()
-		
-		#_wait(10)
 		$CorrectAnswer.text = str('Correct Answer: ', quiz)
 		$YourAnswer.text = str('Your Answer: ', answer)
-		
 		answer = []
 		quiz()
-		timer = get_node("Timer")
-		timer.set_wait_time(6)
-		#timer.connect("timeout", self, "_on_Timer_timeout")
-		timer.start()
 	if (timer.get_time_left() >= 0):
 		$Label.text = str(floor(timer.get_time_left()))
 	if len(notes) == 0:
 		return
-	#var notes = [$C, $E, $G]
-	#var note = notes[randi() % 5]
-	print(notes)
 	for note in notes:
-		print('note', note)
-		#print(note.get_position().y)
 		if note.get_position().y < -560:
 			note.set_position(Vector2(note.get_position().x, 0))
 			notes.remove(0)
 		note.position -= movement
-	#if (note.get_position()):
-	#    note.position = 500
 	
 func quiz():
 	quiz = []
+	for note in note_to_sprite.keys():
+		note_to_sprite[note].set_position(Vector2(note_to_sprite[note].get_position().x, 0))
 	var a = [P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12]
 	var b = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
 	for i in range(1):
@@ -113,7 +89,10 @@ func quiz():
 		if !(b[p] in quiz):
 			quiz.append(b[p])
 			a[p].play()
-	print(quiz)
+	timer = get_node("Timer")
+	timer.set_wait_time(6)
+	timer.connect("timeout", self, "_on_Timer_timeout")
+	timer.start()
 
 func evaluation(answer):
 	if len(answer) != len(quiz):

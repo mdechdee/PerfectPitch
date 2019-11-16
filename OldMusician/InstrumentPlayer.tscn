@@ -101,54 +101,112 @@ align = 1
 valign = 1
 
 [node name="Sprite_C" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="Sprite_C"]
-margin_left = 0.5
-margin_top = 560.0
-margin_right = 176.5
-margin_bottom = 598.0
+margin_left = 90.0
+margin_top = 570.0
+margin_right = 210.0
+margin_bottom = 600.0
 color = Color( 0.698039, 0, 0.717647, 1 )
 
+[node name="Sprite_Csharp" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_Csharp"]
+margin_left = 150.0
+margin_top = 540.0
+margin_right = 270.0
+margin_bottom = 570.0
+color = Color( 0.717647, 0, 0.219608, 1 )
+
 [node name="Sprite_D" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="Sprite_D"]
-margin_left = 180.0
-margin_top = 560.0
-margin_right = 356.0
-margin_bottom = 598.0
+margin_left = 210.0
+margin_top = 570.0
+margin_right = 330.0
+margin_bottom = 600.0
 color = Color( 0.466667, 0.0196078, 0.470588, 1 )
 
+[node name="Sprite_Dsharp" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_Dsharp"]
+margin_left = 270.0
+margin_top = 540.0
+margin_right = 390.0
+margin_bottom = 570.0
+color = Color( 0.254902, 0.0196078, 0.470588, 1 )
+
 [node name="Sprite_E" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="Sprite_E"]
-margin_left = 360.0
-margin_top = 560.0
-margin_right = 536.0
-margin_bottom = 598.0
+margin_left = 330.0
+margin_top = 570.0
+margin_right = 450.0
+margin_bottom = 600.0
 color = Color( 0.858824, 0.407843, 0.180392, 1 )
 
 [node name="Sprite_F" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="Sprite_F"]
-margin_left = 540.0
-margin_top = 560.0
-margin_right = 716.0
-margin_bottom = 598.0
+margin_left = 450.0
+margin_top = 570.0
+margin_right = 570.0
+margin_bottom = 600.0
 color = Color( 0.219608, 1, 0, 1 )
 
+[node name="Sprite_Fsharp" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_Fsharp"]
+margin_left = 510.0
+margin_top = 540.0
+margin_right = 630.0
+margin_bottom = 570.0
+color = Color( 1, 0.890196, 0, 1 )
+
 [node name="Sprite_G" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="Sprite_G"]
-margin_left = 720.0
-margin_top = 560.0
-margin_right = 896.0
-margin_bottom = 598.0
+margin_left = 570.0
+margin_top = 570.0
+margin_right = 690.0
+margin_bottom = 600.0
 color = Color( 0, 0.298039, 1, 1 )
+
+[node name="Sprite_Gsharp" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_Gsharp"]
+margin_left = 630.0
+margin_top = 540.0
+margin_right = 750.0
+margin_bottom = 570.0
+color = Color( 0, 0.133333, 1, 1 )
+
+[node name="Sprite_A" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_A"]
+margin_left = 690.0
+margin_top = 570.0
+margin_right = 810.0
+margin_bottom = 600.0
+color = Color( 0.756863, 0, 1, 1 )
+
+[node name="Sprite_Asharp" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_Asharp"]
+margin_left = 750.0
+margin_top = 540.0
+margin_right = 870.0
+margin_bottom = 570.0
+color = Color( 0.968627, 0, 1, 1 )
+
+[node name="Sprite_B" type="Sprite" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_B"]
+margin_left = 810.0
+margin_top = 570.0
+margin_right = 930.0
+margin_bottom = 600.0
+color = Color( 1, 0, 0.423529, 1 )
 
 [node name="CorrectAnswer" type="Label" parent="."]
 margin_left = 424.0
