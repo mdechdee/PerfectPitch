@@ -13,13 +13,14 @@ onready var P11 = $"A#"
 onready var P12 = $B
 
 export(bool) var is_robot = false
+export(float) var default_volume = 0 
 
 signal note_played(note)
 onready var note_to_node = {"C":P1, "C#":P2, "D":P3, "D#":P4, "E":P5, "F":P6,
 							"F#":P7, "G":P8, "G#":P9, "A":P10, "A#":P11, "B":P12}
 
-
 func play_note(note):
+	note_to_node[note].volume_db = default_volume
 	note_to_node[note].play()
 
 func get_note_length():
@@ -31,6 +32,7 @@ func _input(event):
 	if event.is_action_pressed("note"):
 		for key in note_to_node.keys():
 			if Input.is_action_just_pressed(key):
+				note_to_node[key].volume_db = default_volume
 				note_to_node[key].play()
 				emit_signal("note_played", key)
 				
@@ -39,5 +41,5 @@ func _input(event):
 		var t = get_node("Tween")
 		for key in note_to_node.keys():
 			if Input.is_action_just_released(key):
-				t.interpolate_property(note_to_node[key], "volume_db", 0, -4, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+				t.interpolate_property(note_to_node[key], "volume_db", default_volume, default_volume-4, 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		t.start()

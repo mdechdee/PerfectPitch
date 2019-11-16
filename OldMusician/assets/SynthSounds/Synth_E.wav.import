@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Synth_E.wav-3fccadd3f3972368f8fe74f118d4a2bf.sample"
+
+[deps]
+
+source_file="res://assets/SynthSounds/Synth_E.wav"
+dest_files=[ "res://.import/Synth_E.wav-3fccadd3f3972368f8fe74f118d4a2bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
