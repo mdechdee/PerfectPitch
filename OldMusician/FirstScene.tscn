@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://FirstScene.gd" type="Script" id=1]
 [ext_resource path="res://Area2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/speaker.png" type="Texture" id=3]
+[ext_resource path="res://Piano.wav" type="AudioStream" id=4]
 
-[sub_resource type="CanvasItemMaterial" id=2]
+[sub_resource type="CanvasItemMaterial" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 11, 284 )
 
 [node name="Node2D" type="Node2D"]
@@ -19,9 +20,9 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 modulate = Color( 0.658824, 0.0941176, 0.0941176, 1 )
 self_modulate = Color( 0.580392, 0.266667, 0.266667, 1 )
-material = SubResource( 2 )
+material = SubResource( 1 )
 position = Vector2( 772, 301 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 disabled = true
 
 [node name="Speaker" type="Sprite" parent="."]
@@ -40,6 +41,7 @@ align = 1
 valign = 1
 
 [node name="C" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="C"]
 margin_left = 0.5
@@ -49,6 +51,7 @@ margin_bottom = 598.0
 color = Color( 1, 0, 0, 1 )
 
 [node name="D" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="D"]
 margin_left = 180.0
@@ -58,6 +61,7 @@ margin_bottom = 598.0
 color = Color( 1, 0.376471, 0, 1 )
 
 [node name="E" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="E"]
 margin_left = 360.0
@@ -67,6 +71,7 @@ margin_bottom = 598.0
 color = Color( 0.968627, 1, 0, 1 )
 
 [node name="F" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="F"]
 margin_left = 540.0
@@ -76,6 +81,7 @@ margin_bottom = 598.0
 color = Color( 0.219608, 1, 0, 1 )
 
 [node name="G" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="G"]
 margin_left = 720.0
@@ -83,3 +89,6 @@ margin_top = 560.0
 margin_right = 896.0
 margin_bottom = 598.0
 color = Color( 0, 0.298039, 1, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
