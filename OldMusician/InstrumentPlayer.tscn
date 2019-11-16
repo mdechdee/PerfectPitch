@@ -198,9 +198,9 @@ color = Color( 1, 0, 0.423529, 1 )
 
 [node name="CorrectAnswer" type="Label" parent="."]
 margin_left = 424.0
-margin_top = 56.0
+margin_top = 101.0
 margin_right = 568.0
-margin_bottom = 92.0
+margin_bottom = 137.0
 text = "Correct Answer:"
 
 [node name="YourAnswer" type="Label" parent="."]

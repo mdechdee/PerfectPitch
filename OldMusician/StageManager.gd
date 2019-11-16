@@ -9,10 +9,6 @@ signal timer_end
 
 func _ready():
 	quiz()
-	timer = get_node("Timer")
-	timer.set_wait_time(6)
-	timer.connect("timeout", self, "_on_Timer_timeout")
-	timer.start()
 
 func _process(delta):
 	if (timer.get_time_left() < 1.0):
@@ -55,3 +51,6 @@ func evaluation(answer):
 
 func _on_NotePlayer_note_played(note):
 	answer.append(note)
+	$YourAnswer.text = str('Your Answer: ', answer)
+	if len(answer) > 0:
+		$CorrectAnswer.text = str('Correct Answer: ', [])
