@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Node.gd" type="Script" id=1]
 [ext_resource path="res://Piano_C.wav" type="AudioStream" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Piano_B.wav" type="AudioStream" id=13]
 [ext_resource path="res://BGMusic1.wav" type="AudioStream" id=14]
 [ext_resource path="res://BGMusicPlayer.gd" type="Script" id=15]
+[ext_resource path="res://assets/speaker.png" type="Texture" id=16]
 
 [node name="InstrumentPlayer" type="Node"]
 script = ExtResource( 1 )
@@ -74,4 +75,78 @@ stream = ExtResource( 14 )
 volume_db = -7.068
 autoplay = true
 script = ExtResource( 15 )
+
+[node name="Speaker" type="Sprite" parent="."]
+position = Vector2( 500, 240 )
+texture = ExtResource( 16 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 31.0
+margin_right = 81.0
+margin_bottom = 77.0
+text = "0"
+align = 1
+valign = 1
+
+[node name="Score" type="Label" parent="."]
+margin_left = 904.846
+margin_top = 34.0907
+margin_right = 961.846
+margin_bottom = 80.0907
+text = "0"
+align = 1
+valign = 1
+
+[node name="Sprite_C" type="Sprite" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_C"]
+margin_left = 0.5
+margin_top = 560.0
+margin_right = 176.5
+margin_bottom = 598.0
+color = Color( 0.698039, 0, 0.717647, 1 )
+
+[node name="Sprite_D" type="Sprite" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_D"]
+margin_left = 180.0
+margin_top = 560.0
+margin_right = 356.0
+margin_bottom = 598.0
+color = Color( 0.466667, 0.0196078, 0.470588, 1 )
+
+[node name="Sprite_E" type="Sprite" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_E"]
+margin_left = 360.0
+margin_top = 560.0
+margin_right = 536.0
+margin_bottom = 598.0
+color = Color( 0.858824, 0.407843, 0.180392, 1 )
+
+[node name="Sprite_F" type="Sprite" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_F"]
+margin_left = 540.0
+margin_top = 560.0
+margin_right = 716.0
+margin_bottom = 598.0
+color = Color( 0.219608, 1, 0, 1 )
+
+[node name="Sprite_G" type="Sprite" parent="."]
+editor/display_folded = true
+
+[node name="ColorRect" type="ColorRect" parent="Sprite_G"]
+margin_left = 720.0
+margin_top = 560.0
+margin_right = 896.0
+margin_bottom = 598.0
+color = Color( 0, 0.298039, 1, 1 )
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
