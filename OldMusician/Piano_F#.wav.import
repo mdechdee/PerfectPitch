@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Piano_F#.wav-f1ddcf6b3d477badb31a2de78be92526.sample"
+
+[deps]
+
+source_file="res://Piano_F#.wav"
+dest_files=[ "res://.import/Piano_F#.wav-f1ddcf6b3d477badb31a2de78be92526.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Piano_C#.wav-b0fed54c3aa6a43b2dd40e978945d02e.sample"
+
+[deps]
+
+source_file="res://Piano_C#.wav"
+dest_files=[ "res://.import/Piano_C#.wav-b0fed54c3aa6a43b2dd40e978945d02e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
