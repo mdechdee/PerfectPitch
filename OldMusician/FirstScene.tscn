@@ -50,6 +50,7 @@ align = 1
 valign = 1
 
 [node name="C" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="C"]
 margin_left = 0.5
@@ -59,6 +60,7 @@ margin_bottom = 598.0
 color = Color( 0.698039, 0, 0.717647, 1 )
 
 [node name="D" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="D"]
 margin_left = 180.0
@@ -68,6 +70,7 @@ margin_bottom = 598.0
 color = Color( 0.466667, 0.0196078, 0.470588, 1 )
 
 [node name="E" type="Sprite" parent="."]
+editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="E"]
 margin_left = 360.0
