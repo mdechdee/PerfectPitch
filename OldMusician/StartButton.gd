@@ -9,7 +9,6 @@ func _ready():
 	pass # Replace with function body.
 	
 func _on_start_button_pressed():
-	print("start button clicked")
 	get_tree().change_scene("res://MainScene.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

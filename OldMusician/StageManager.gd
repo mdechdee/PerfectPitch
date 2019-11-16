@@ -32,7 +32,6 @@ func quiz():
 			robot_note_player.play_note(b[p])
 	for note in SM.note_to_sprite.keys():
 		SM.note_to_sprite[note].set_position(Vector2(SM.note_to_sprite[note].get_position().x, 0))
-	print(quiz)
 	timer = get_node("Timer")
 	timer.set_wait_time(two_bar_sec)
 	timer.start()
