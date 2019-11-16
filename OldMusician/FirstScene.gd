@@ -3,7 +3,8 @@ extends Node2D
 onready var P = $AudioStreamPlayer
 onready var length = P.stream.get_length()
 onready var length_per_note = length/12
-
+onready var player_instrument = $PlayerInstrumentPlayer
+onready var robot_instrument = $RobotInstrumentPlayer
 var movement = Vector2(0, 5)
 var timer
 var notes = []
@@ -27,59 +28,6 @@ func _create_timer(object_target, float_wait_time, bool_is_oneshot, string_funct
     self.add_child(timer)
     timer.start()
 
-func _input(event):
-    if Input.is_action_pressed("note"):
-        var P1 = AudioStreamPlayer.new()
-        var T = Timer.new()
-        P1.stream = P.stream
-        P1.add_child(T)
-        T.connect("timeout",P1,"stop")
-        T.start(length_per_note)
-        add_child(P1)
-        if event.is_action_pressed("C"):
-            P1.play(0)
-            if $C in notes:
-                return
-            notes.append($C)
-            answer.append("C")
-        elif event.is_action_pressed("C#"):
-            P1.play(length_per_note)
-        elif event.is_action_pressed("D"):
-            P1.play(length_per_note*2)
-            if $D in notes:
-                return
-            notes.append($D)
-            answer.append("D")
-        elif event.is_action_pressed("D#"):
-            P1.play(length_per_note*3)
-        elif event.is_action_pressed("E"):
-            P1.play(length_per_note*4)
-            if $E in notes:
-                return
-            notes.append($E)
-            answer.append("E")
-        elif event.is_action_pressed("F"):
-            P1.play(length_per_note*5)
-            if $F in notes:
-                return
-            notes.append($F)
-            answer.append("F")
-        elif event.is_action_pressed("F#"):
-            P1.play(length_per_note*6)
-        elif event.is_action_pressed("G"):
-            if $G in notes:
-                return
-            notes.append($G)
-            answer.append("G")
-            P1.play(length_per_note*7)
-        elif event.is_action_pressed("G#"):
-            P1.play(length_per_note*8)
-        elif event.is_action_pressed("A"):
-            P1.play(length_per_note*9)
-        elif event.is_action_pressed("A#"):
-            P1.play(length_per_note*10)
-        elif event.is_action_pressed("B"):
-            P1.play(length_per_note*11)
 
 func _ready():
     #randomize()
@@ -87,7 +35,6 @@ func _ready():
     #$Speaker.texture = texture
 
     quiz()
-
     timer = get_node("Timer")
     timer.set_wait_time(6)
     timer.connect("timeout", self, "_on_Timer_timeout")
@@ -124,13 +71,13 @@ func _process(delta):
     #    note.position = 500
     
 func quiz():
-    var P1 = AudioStreamPlayer.new()
-    var T = Timer.new()
-    P1.stream = P.stream
-    P1.add_child(T)
-    T.connect("timeout",P1,"stop")
-    T.start(length_per_note)
-    add_child(P1)
-    P1.play(0)
-    P1.play(length_per_note*4)
-    P1.play(length_per_note*7)
+    robot_instrument.play_note("C")
+    robot_instrument.play_note("E")
+    robot_instrument.play_note("G")
+
+
+func _on_PlayerInstrumentPlayer_note_played(note):
+	if get_node(note) in notes:
+		return
+	notes.append(get_node(note))
+	answer.append(note)
