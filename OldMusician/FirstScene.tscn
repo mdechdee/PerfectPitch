@@ -40,35 +40,41 @@ text = "0"
 align = 1
 valign = 1
 
+[node name="Score" type="Label" parent="."]
+margin_left = 904.846
+margin_top = 34.0907
+margin_right = 961.846
+margin_bottom = 80.0907
+text = "0"
+align = 1
+valign = 1
+
 [node name="C" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="C"]
 margin_left = 0.5
 margin_top = 560.0
 margin_right = 176.5
 margin_bottom = 598.0
-color = Color( 1, 0, 0, 1 )
+color = Color( 0.698039, 0, 0.717647, 1 )
 
 [node name="D" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="D"]
 margin_left = 180.0
 margin_top = 560.0
 margin_right = 356.0
 margin_bottom = 598.0
-color = Color( 1, 0.376471, 0, 1 )
+color = Color( 0.466667, 0.0196078, 0.470588, 1 )
 
 [node name="E" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="E"]
 margin_left = 360.0
 margin_top = 560.0
 margin_right = 536.0
 margin_bottom = 598.0
-color = Color( 0.968627, 1, 0, 1 )
+color = Color( 0.858824, 0.407843, 0.180392, 1 )
 
 [node name="F" type="Sprite" parent="."]
 editor/display_folded = true
