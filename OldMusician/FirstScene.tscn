@@ -42,48 +42,44 @@ valign = 1
 [node name="C" type="Sprite" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="C"]
-margin_left = 0.555573
-margin_top = 562.111
-margin_right = 176.556
-margin_bottom = 600.111
+margin_left = 0.5
+margin_top = 560.0
+margin_right = 176.5
+margin_bottom = 598.0
 color = Color( 1, 0, 0, 1 )
 
 [node name="D" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="D"]
-margin_left = 181.222
-margin_top = 562.111
-margin_right = 357.222
-margin_bottom = 600.111
+margin_left = 180.0
+margin_top = 560.0
+margin_right = 356.0
+margin_bottom = 598.0
 color = Color( 1, 0.376471, 0, 1 )
 
 [node name="E" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="E"]
-margin_left = 361.222
-margin_top = 562.111
-margin_right = 537.222
-margin_bottom = 600.111
+margin_left = 360.0
+margin_top = 560.0
+margin_right = 536.0
+margin_bottom = 598.0
 color = Color( 0.968627, 1, 0, 1 )
 
 [node name="F" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="F"]
-margin_left = 540.556
-margin_top = 562.111
-margin_right = 716.556
-margin_bottom = 600.111
+margin_left = 540.0
+margin_top = 560.0
+margin_right = 716.0
+margin_bottom = 598.0
 color = Color( 0.219608, 1, 0, 1 )
 
 [node name="G" type="Sprite" parent="."]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="G"]
-margin_left = 723.556
-margin_top = 562.444
-margin_right = 899.556
-margin_bottom = 600.444
+margin_left = 720.0
+margin_top = 560.0
+margin_right = 896.0
+margin_bottom = 598.0
 color = Color( 0, 0.298039, 1, 1 )

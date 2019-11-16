@@ -14,10 +14,14 @@ func _ready():
     timer.start()
 
 func _process(delta):
-    var notes = [$C, $D, $E, $F, $G]
-    var note = notes[randi() % 5]
-    note.position -= movement
-    #if (note.position.y < 0):
+    var notes = [$C, $E, $G]
+    #var note = notes[randi() % 5]
+    for note in notes:
+        #print(note.get_position().y)
+        if note.get_position().y < -560:
+            note.set_position(Vector2(note.get_position().x, 0))
+        note.position -= movement
+    #if (note.get_position()):
     #    note.position = 500
     if (timer.get_time_left() < 1.0):
         timer.stop()
