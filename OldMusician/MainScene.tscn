@@ -327,3 +327,4 @@ texture = ExtResource( 32 )
 [connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="PlayerNotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
