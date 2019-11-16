@@ -17,6 +17,8 @@ export(bool) var is_robot = false
 signal note_played(note)
 onready var note_to_node = {"C":P1, "C#":P2, "D":P3, "D#":P4, "E":P5, "F":P6,
 							"F#":P7, "G":P8, "G#":P9, "A":P10, "A#":P11, "B":P12}
+onready var note_to_sprite = {"C":$Sprite_C, "C#":$Sprite_Csharp, "D":$Sprite_D, "D#":$Sprite_Dsharp, "E":$Sprite_E, "F":$Sprite_F,
+							"F#":$Sprite_Fsharp, "G":$Sprite_G, "G#":$Sprite_Gsharp, "A":$Sprite_A, "A#":$Sprite_Asharp, "B":$Sprite_B}
 
 func play_note(note):
 	note_to_node[note].play()
@@ -41,6 +43,11 @@ func _input(event):
 			if Input.is_action_just_pressed(key):
 				note_to_node[key].play()
 				emit_signal("note_played", key)
+				print('key', key)
+				if key in notes:
+					return
+				notes.append(note_to_sprite[key])
+				answer.append(key)
 
 	if event.is_action_released("note"):
 		var t = get_node("Tween")
@@ -86,7 +93,9 @@ func _process(delta):
 		return
 	#var notes = [$C, $E, $G]
 	#var note = notes[randi() % 5]
+	print(notes)
 	for note in notes:
+		print('note', note)
 		#print(note.get_position().y)
 		if note.get_position().y < -560:
 			note.set_position(Vector2(note.get_position().x, 0))
@@ -105,10 +114,6 @@ func quiz():
 			quiz.append(b[p])
 			a[p].play()
 	print(quiz)
-	
-	P1.play()
-	P5.play()
-	P8.play()
 
 func evaluation(answer):
 	if len(answer) != len(quiz):
