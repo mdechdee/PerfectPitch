@@ -7,6 +7,8 @@ onready var  note_player = $NotePlayer
 
 signal timer_end
 
+var started
+
 func _ready():
 	quiz()
 
@@ -54,3 +56,4 @@ func _on_NotePlayer_note_played(note):
 	$YourAnswer.text = str('Your Answer: ', answer)
 	if len(answer) > 0:
 		$CorrectAnswer.text = str('Correct Answer: ', [])
+

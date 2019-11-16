@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://StageManager.gd" type="Script" id=1]
 [ext_resource path="res://NotePlayer.gd" type="Script" id=2]
@@ -22,6 +22,25 @@
 [ext_resource path="res://robot-design.png" type="Texture" id=20]
 [ext_resource path="res://robot.gd" type="Script" id=21]
 [ext_resource path="res://Command.tscn" type="PackedScene" id=22]
+[ext_resource path="res://StageScene.gd" type="Script" id=23]
+
+[sub_resource type="ImageTexture" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "PlayStageScene"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
 
 [node name="SceneManager" type="Node"]
 script = ExtResource( 1 )
@@ -262,12 +281,28 @@ script = ExtResource( 21 )
 
 [node name="Timer" type="Timer" parent="robot-design"]
 
-[node name="Panel" type="Panel" parent="." instance=ExtResource( 22 )]
+[node name="Panel" parent="." instance=ExtResource( 22 )]
 margin_left = 336.0
 margin_top = 336.0
 margin_right = 676.0
 margin_bottom = 494.0
-[connection signal="note_played" from="NotePlayer" to="." method="_on_NotePlayer_note_played"]
+
+[node name="StageScene" type="TextureRect" parent="."]
+editor/display_folded = true
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = SubResource( 1 )
+script = ExtResource( 23 )
+
+[node name="ColorRect" type="ColorRect" parent="StageScene"]
+margin_left = -1024.0
+margin_right = -0.000244141
+margin_bottom = 600.0
+color = Color( 0.698039, 0, 0.717647, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StageScene"]
+autoplay = "PlayStageScene"
+anims/PlayStageScene = SubResource( 2 )
 [connection signal="note_played" from="NotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="NotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
