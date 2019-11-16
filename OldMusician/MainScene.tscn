@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://StageManager.gd" type="Script" id=1]
 [ext_resource path="res://NotePlayer.gd" type="Script" id=2]
@@ -30,8 +30,34 @@
 [ext_resource path="res://BGMusic1.wav" type="AudioStream" id=28]
 [ext_resource path="res://BGMusicPlayer.gd" type="Script" id=29]
 [ext_resource path="res://assets/speaker.png" type="Texture" id=30]
-[ext_resource path="res://robot-design.png" type="Texture" id=31]
-[ext_resource path="res://standing-up-man-.png" type="Texture" id=32]
+[ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=31]
+[ext_resource path="res://robot-design.png" type="Texture" id=32]
+[ext_resource path="res://standing-up-man-.png" type="Texture" id=33]
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://assets/fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 31 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+font_data = SubResource( 7 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "StepAnimation"
@@ -306,6 +332,7 @@ margin_left = 24.0
 margin_top = 31.0
 margin_right = 81.0
 margin_bottom = 77.0
+custom_fonts/font = SubResource( 3 )
 text = "0"
 align = 1
 valign = 1
@@ -315,33 +342,36 @@ margin_left = 904.846
 margin_top = 34.0907
 margin_right = 961.846
 margin_bottom = 80.0907
+custom_fonts/font = SubResource( 5 )
 text = "0"
 align = 1
 valign = 1
 
 [node name="CorrectAnswer" type="Label" parent="."]
-margin_left = 424.0
+margin_left = 330.0
 margin_top = 98.0
-margin_right = 568.0
+margin_right = 547.0
 margin_bottom = 134.0
+custom_fonts/font = SubResource( 6 )
 text = "Correct Answer:"
 
 [node name="YourAnswer" type="Label" parent="."]
-margin_left = 425.682
-margin_top = 76.6783
-margin_right = 569.682
-margin_bottom = 112.678
+margin_left = 329.682
+margin_top = 53.6783
+margin_right = 509.682
+margin_bottom = 89.6783
+custom_fonts/font = SubResource( 8 )
 text = "Your Answer:"
 
 [node name="robot-design" type="Sprite" parent="."]
 position = Vector2( 954.233, 483.289 )
 z_index = -1
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 
 [node name="standing-up-man-" type="Sprite" parent="."]
 position = Vector2( 29.4414, 535.186 )
 z_index = -2
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 editor/display_folded = true
@@ -356,8 +386,8 @@ color = Color( 0.698039, 0, 0.717647, 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "StepAnimation"
 anims/StepAnimation = SubResource( 1 )
-[connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="PlayerNotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="tween_completed" from="SpritesManager/Tween" to="SpritesManager" method="_on_Tween_tween_completed"]
+[connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
