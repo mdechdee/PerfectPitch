@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Panel" type="Panel"]
+margin_left = 411.0
+margin_top = 85.0
+margin_right = 751.0
+margin_bottom = 243.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 49.0
+margin_top = 18.0
+margin_right = 302.0
+margin_bottom = 156.0
