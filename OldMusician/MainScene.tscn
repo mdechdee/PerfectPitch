@@ -189,11 +189,9 @@ bus = "B"
 [node name="Tween" type="Tween" parent="RobotNotePlayer"]
 
 [node name="SpritesManager" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 27 )
 
 [node name="Sprite_C" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_C"]
 margin_left = 90.0
@@ -202,8 +200,15 @@ margin_right = 210.0
 margin_bottom = 600.0
 color = Color( 0.698039, 0, 0.717647, 1 )
 
+[node name="Label" type="Label" parent="SpritesManager/Sprite_C"]
+margin_left = 130.652
+margin_top = 578.116
+margin_right = 170.652
+margin_bottom = 592.116
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "C: [A]"
+
 [node name="Sprite_Csharp" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_Csharp"]
 margin_left = 150.0
@@ -212,8 +217,15 @@ margin_right = 270.0
 margin_bottom = 570.0
 color = Color( 0.717647, 0, 0.219608, 1 )
 
+[node name="Label2" type="Label" parent="SpritesManager/Sprite_Csharp"]
+margin_left = 185.967
+margin_top = 548.075
+margin_right = 231.967
+margin_bottom = 562.075
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "C#: [W]"
+
 [node name="Sprite_D" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_D"]
 margin_left = 210.0
@@ -222,8 +234,15 @@ margin_right = 330.0
 margin_bottom = 600.0
 color = Color( 0.466667, 0.0196078, 0.470588, 1 )
 
+[node name="Label3" type="Label" parent="SpritesManager/Sprite_D"]
+margin_left = 248.911
+margin_top = 578.355
+margin_right = 294.911
+margin_bottom = 592.355
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "D: [S]"
+
 [node name="Sprite_Dsharp" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_Dsharp"]
 margin_left = 270.0
@@ -232,8 +251,15 @@ margin_right = 390.0
 margin_bottom = 570.0
 color = Color( 0.254902, 0.0196078, 0.470588, 1 )
 
+[node name="Label4" type="Label" parent="SpritesManager/Sprite_Dsharp"]
+margin_left = 308.756
+margin_top = 548.79
+margin_right = 354.756
+margin_bottom = 562.79
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "D#: [E]"
+
 [node name="Sprite_E" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_E"]
 margin_left = 330.0
@@ -242,8 +268,15 @@ margin_right = 450.0
 margin_bottom = 600.0
 color = Color( 0.858824, 0.407843, 0.180392, 1 )
 
+[node name="Label5" type="Label" parent="SpritesManager/Sprite_E"]
+margin_left = 368.123
+margin_top = 579.07
+margin_right = 414.123
+margin_bottom = 593.07
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "E: [D]"
+
 [node name="Sprite_F" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_F"]
 margin_left = 450.0
@@ -252,8 +285,15 @@ margin_right = 570.0
 margin_bottom = 600.0
 color = Color( 0.219608, 1, 0, 1 )
 
+[node name="Label6" type="Label" parent="SpritesManager/Sprite_F"]
+margin_left = 491.627
+margin_top = 577.401
+margin_right = 537.627
+margin_bottom = 591.401
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "F: [F]"
+
 [node name="Sprite_Fsharp" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_Fsharp"]
 margin_left = 510.0
@@ -262,8 +302,15 @@ margin_right = 630.0
 margin_bottom = 570.0
 color = Color( 1, 0.890196, 0, 1 )
 
+[node name="Label7" type="Label" parent="SpritesManager/Sprite_Fsharp"]
+margin_left = 545.988
+margin_top = 548.075
+margin_right = 591.988
+margin_bottom = 562.075
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "F#: [T]"
+
 [node name="Sprite_G" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_G"]
 margin_left = 570.0
@@ -272,8 +319,15 @@ margin_right = 690.0
 margin_bottom = 600.0
 color = Color( 0, 0.298039, 1, 1 )
 
+[node name="Label8" type="Label" parent="SpritesManager/Sprite_G"]
+margin_left = 605.594
+margin_top = 578.355
+margin_right = 651.594
+margin_bottom = 592.355
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "G: [G]"
+
 [node name="Sprite_Gsharp" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_Gsharp"]
 margin_left = 630.0
@@ -282,8 +336,15 @@ margin_right = 750.0
 margin_bottom = 570.0
 color = Color( 0, 0.133333, 1, 1 )
 
+[node name="Label9" type="Label" parent="SpritesManager/Sprite_Gsharp"]
+margin_left = 670.207
+margin_top = 548.075
+margin_right = 716.207
+margin_bottom = 562.075
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "G#: [Y]"
+
 [node name="Sprite_A" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_A"]
 margin_left = 690.0
@@ -292,8 +353,15 @@ margin_right = 810.0
 margin_bottom = 600.0
 color = Color( 0.756863, 0, 1, 1 )
 
+[node name="Label10" type="Label" parent="SpritesManager/Sprite_A"]
+margin_left = 727.906
+margin_top = 579.308
+margin_right = 773.906
+margin_bottom = 593.308
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "A: [H]"
+
 [node name="Sprite_Asharp" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_Asharp"]
 margin_left = 750.0
@@ -302,8 +370,15 @@ margin_right = 870.0
 margin_bottom = 570.0
 color = Color( 0.968627, 0, 1, 1 )
 
+[node name="Label11" type="Label" parent="SpritesManager/Sprite_Asharp"]
+margin_left = 787.035
+margin_top = 548.075
+margin_right = 833.035
+margin_bottom = 562.075
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "A#: [U]"
+
 [node name="Sprite_B" type="Sprite" parent="SpritesManager"]
-editor/display_folded = true
 
 [node name="ColorRect" type="ColorRect" parent="SpritesManager/Sprite_B"]
 margin_left = 810.0
@@ -312,6 +387,13 @@ margin_right = 930.0
 margin_bottom = 600.0
 color = Color( 1, 0, 0.423529, 1 )
 
+[node name="Label12" type="Label" parent="SpritesManager/Sprite_B"]
+margin_left = 854.51
+margin_top = 578.355
+margin_right = 900.51
+margin_bottom = 592.355
+rect_pivot_offset = Vector2( 108.024, 5.74866 )
+text = "B: [J]"
 [node name="Tween" type="Tween" parent="SpritesManager"]
 
 [node name="BGStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -386,7 +468,6 @@ color = Color( 0.698039, 0, 0.717647, 1 )
 autoplay = "StepAnimation"
 anims/StepAnimation = SubResource( 8 )
 [connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
-[connection signal="note_played" from="PlayerNotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="tween_completed" from="SpritesManager/Tween" to="SpritesManager" method="_on_Tween_tween_completed"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -34,7 +34,11 @@ func quiz():
 	timer = get_node("Timer")
 	timer.set_wait_time(two_bar_sec)
 	timer.start()
-
+	
+	if randi()%2:
+		$CorrectAnswer.text = str('Press the note: ', quiz)
+	else:
+		$CorrectAnswer.text = str('Can you guess?: [?]')
 func evaluation(answer):
 	if len(answer) != len(quiz):
 		return false
