@@ -149,4 +149,18 @@ margin_top = 560.0
 margin_right = 896.0
 margin_bottom = 598.0
 color = Color( 0, 0.298039, 1, 1 )
+
+[node name="CorrectAnswer" type="Label" parent="."]
+margin_left = 424.0
+margin_top = 56.0
+margin_right = 568.0
+margin_bottom = 92.0
+text = "Correct Answer:"
+
+[node name="YourAnswer" type="Label" parent="."]
+margin_left = 425.682
+margin_top = 76.6783
+margin_right = 569.682
+margin_bottom = 112.678
+text = "Your Answer:"
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]

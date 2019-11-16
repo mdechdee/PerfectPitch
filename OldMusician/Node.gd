@@ -30,6 +30,8 @@ var timer
 var notes = []
 var answer = []
 
+var quiz = ["C"]
+
 signal timer_end
 
 func _input(event):
@@ -142,12 +144,16 @@ func _ready():
 func _process(delta):
 	if (timer.get_time_left() < 1.0):
 		print(answer)
-		if "C" in answer and "E" in answer and "G" in answer:
+		#if "C" in answer and "E" in answer and "G" in answer:
+		if evaluation(answer):
 			$Score.text = str(int($Score.text) + 1)
 		$Label.text = str(0)
 		timer.stop()
 		
 		#_wait(10)
+		$CorrectAnswer.text = str('Correct Answer: ', quiz)
+		$YourAnswer.text = str('Your Answer: ', answer)
+		
 		answer = []
 		quiz()
 		timer = get_node("Timer")
@@ -170,9 +176,27 @@ func _process(delta):
 	#    note.position = 500
 	
 func quiz():
+	quiz = []
+	var a = [P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, P11, P12]
+	var b = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+	for i in range(1):
+		var p = randi()%12
+		if !(b[p] in quiz):
+			quiz.append(b[p])
+			a[p].play()
+	print(quiz)
+	
 	P1.play()
 	P5.play()
 	P8.play()
+
+func evaluation(answer):
+	if len(answer) != len(quiz):
+		return false
+	for q in quiz:
+		if !(q in answer):
+			 return false
+	return true
 
 func _wait(seconds):
 	self._create_timer(self, seconds, true, "_emit_timer_end_signal")
