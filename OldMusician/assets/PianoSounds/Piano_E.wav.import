@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Piano_A.wav-c67316a6040fca94d3c836c5b13983a4.sample"
+path="res://.import/Piano_E.wav-493e523e3bff5caacf9151a83ff04f31.sample"
 
 [deps]
 
-source_file="res://Piano_A.wav"
-dest_files=[ "res://.import/Piano_A.wav-c67316a6040fca94d3c836c5b13983a4.sample" ]
+source_file="res://assets/PianoSounds/Piano_E.wav"
+dest_files=[ "res://.import/Piano_E.wav-493e523e3bff5caacf9151a83ff04f31.sample" ]
 
 [params]
 
