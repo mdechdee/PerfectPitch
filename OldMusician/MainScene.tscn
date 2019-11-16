@@ -34,33 +34,32 @@
 [ext_resource path="res://robot-design.png" type="Texture" id=32]
 [ext_resource path="res://standing-up-man-.png" type="Texture" id=33]
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/Roboto-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 64
-font_data = SubResource( 2 )
+font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 64
-font_data = SubResource( 4 )
-
-[sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 31 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://assets/fonts/Roboto-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 30
-font_data = SubResource( 7 )
+font_data = SubResource( 6 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "StepAnimation"
+[sub_resource type="Animation" id=8]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -332,7 +331,7 @@ margin_left = 24.0
 margin_top = 31.0
 margin_right = 81.0
 margin_bottom = 77.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 1
 valign = 1
@@ -342,7 +341,7 @@ margin_left = 904.846
 margin_top = 34.0907
 margin_right = 961.846
 margin_bottom = 80.0907
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 text = "0"
 align = 1
 valign = 1
@@ -352,7 +351,7 @@ margin_left = 330.0
 margin_top = 98.0
 margin_right = 547.0
 margin_bottom = 134.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 text = "Correct Answer:"
 
 [node name="YourAnswer" type="Label" parent="."]
@@ -360,7 +359,7 @@ margin_left = 329.682
 margin_top = 53.6783
 margin_right = 509.682
 margin_bottom = 89.6783
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "Your Answer:"
 
 [node name="robot-design" type="Sprite" parent="."]
@@ -385,9 +384,9 @@ color = Color( 0.698039, 0, 0.717647, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "StepAnimation"
-anims/StepAnimation = SubResource( 1 )
+anims/StepAnimation = SubResource( 8 )
+[connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="PlayerNotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="tween_completed" from="SpritesManager/Tween" to="SpritesManager" method="_on_Tween_tween_completed"]
-[connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
