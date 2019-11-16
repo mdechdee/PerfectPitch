@@ -17,17 +17,6 @@ func _ready():
 	quiz()
 
 func _process(delta):
-	if (timer.get_time_left() < 1.0):
-		if evaluation(answer):
-			$Score.text = str(int($Score.text) + 1)
-		$Label.text = str(0)
-		timer.stop()
-		
-		$CorrectAnswer.text = str('Correct Answer: ', quiz)
-		$YourAnswer.text = str('Your Answer: ', answer)
-		
-		quiz()
-		
 	if (timer.get_time_left() >= 0):
 		$Label.text = str(floor(timer.get_time_left()))
 
