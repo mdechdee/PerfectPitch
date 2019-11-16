@@ -6,7 +6,7 @@ var quiz = ["C"]
 export(float) var bpm = 98.0
 onready var  player_note_player = $PlayerNotePlayer
 onready var  robot_note_player = $RobotNotePlayer
-onready var two_bar_sec = (9/bpm)*60
+onready var two_bar_sec = (8/bpm)*60
 
 onready var no
 signal timer_end
