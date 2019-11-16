@@ -14,10 +14,6 @@ signal timer_end
 var started
 
 func _ready():
-	timer = get_node("Timer")
-	timer.set_wait_time(two_bar_sec)
-	timer.connect("timeout", self, "_on_Timer_timeout")
-	timer.start()
 	quiz()
 
 func _process(delta):
@@ -31,10 +27,7 @@ func _process(delta):
 		$YourAnswer.text = str('Your Answer: ', answer)
 		
 		quiz()
-		timer = get_node("Timer")
-		timer.set_wait_time(two_bar_sec)
-		#timer.connect("timeout", self, "_on_Timer_timeout")
-		timer.start()
+		
 	if (timer.get_time_left() >= 0):
 		$Label.text = str(floor(timer.get_time_left()))
 
@@ -50,7 +43,9 @@ func quiz():
 		if !(b[p] in quiz):
 			quiz.append(b[p])
 			robot_note_player.play_note(b[p])
-	print(quiz)
+	timer = get_node("Timer")
+	timer.set_wait_time(two_bar_sec)
+	timer.start()
 
 func evaluation(answer):
 	if len(answer) != len(quiz):
