@@ -77,6 +77,7 @@ bus = "B"
 [node name="Tween" type="Tween" parent="NotePlayer"]
 
 [node name="SpritesManager" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 15 )
 
 [node name="Sprite_C" type="Sprite" parent="SpritesManager"]
@@ -242,6 +243,6 @@ margin_top = 76.6783
 margin_right = 569.682
 margin_bottom = 112.678
 text = "Your Answer:"
-[connection signal="note_played" from="NotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="NotePlayer" to="." method="_on_NotePlayer_note_played"]
+[connection signal="note_played" from="NotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]

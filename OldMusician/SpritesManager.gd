@@ -8,21 +8,13 @@ var movement = Vector2(0, 5)
 func _process(delta):
 	if len(notes) == 0:
 		return
-	#var notes = [$C, $E, $G]
-	#var note = notes[randi() % 5]
-	print(notes)
 	for note in notes:
-		print('note', note)
-		#print(note.get_position().y)
 		if note.get_position().y < -560:
 			note.set_position(Vector2(note.get_position().x, 0))
 			notes.remove(0)
 		note.position -= movement
-	#if (note.get_position()):
-	#    note.position = 500
 	
 func _on_NotePlayer_note_played(note):
-	print('key', note)
 	if note in notes:
 		return
 	notes.append(note_to_sprite[note])
