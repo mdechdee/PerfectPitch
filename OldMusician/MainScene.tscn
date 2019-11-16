@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://StageManager.gd" type="Script" id=1]
 [ext_resource path="res://NotePlayer.gd" type="Script" id=2]
@@ -32,6 +32,22 @@
 [ext_resource path="res://assets/speaker.png" type="Texture" id=30]
 [ext_resource path="res://robot-design.png" type="Texture" id=31]
 [ext_resource path="res://standing-up-man-.png" type="Texture" id=32]
+
+[sub_resource type="Animation" id=1]
+resource_name = "StepAnimation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
 
 [node name="MainScene" type="Node"]
 script = ExtResource( 1 )
@@ -324,6 +340,19 @@ texture = ExtResource( 31 )
 position = Vector2( 29.4414, 535.186 )
 z_index = -2
 texture = ExtResource( 32 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+margin_left = -1024.0
+margin_bottom = 600.0
+color = Color( 0.698039, 0, 0.717647, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+autoplay = "StepAnimation"
+anims/StepAnimation = SubResource( 1 )
 [connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="PlayerNotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
