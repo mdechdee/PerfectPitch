@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://StageManager.gd" type="Script" id=1]
 [ext_resource path="res://NotePlayer.gd" type="Script" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://BGMusic1.wav" type="AudioStream" id=16]
 [ext_resource path="res://BGMusicPlayer.gd" type="Script" id=17]
 [ext_resource path="res://assets/speaker.png" type="Texture" id=18]
+[ext_resource path="res://standing-up-man-.png" type="Texture" id=19]
+[ext_resource path="res://robot-design.png" type="Texture" id=20]
+[ext_resource path="res://robot.gd" type="Script" id=21]
+[ext_resource path="res://Command.tscn" type="PackedScene" id=22]
 
 [node name="SceneManager" type="Node"]
 script = ExtResource( 1 )
@@ -243,6 +247,26 @@ margin_top = 76.6783
 margin_right = 569.682
 margin_bottom = 112.678
 text = "Your Answer:"
+
+[node name="standing-up-man-" type="Sprite" parent="."]
+position = Vector2( 123, 337 )
+z_index = -1
+texture = ExtResource( 19 )
+
+[node name="robot-design" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 857, 319 )
+z_index = -1
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+
+[node name="Timer" type="Timer" parent="robot-design"]
+
+[node name="Panel" type="Panel" parent="." instance=ExtResource( 22 )]
+margin_left = 336.0
+margin_top = 336.0
+margin_right = 676.0
+margin_bottom = 494.0
 [connection signal="note_played" from="NotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="NotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="finished" from="BGStreamPlayer" to="BGStreamPlayer" method="_on_BGStreamPlayer_finished"]
