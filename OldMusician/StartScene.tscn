@@ -45,5 +45,5 @@ margin_top = 374.937
 margin_right = 614.364
 margin_bottom = 415.937
 custom_fonts/font = SubResource( 4 )
-text = "Old Musician"
+text = "Perfect Pitch"
 [connection signal="pressed" from="StartScreen/start_button" to="StartScreen/start_button" method="_on_start_button_pressed"]
