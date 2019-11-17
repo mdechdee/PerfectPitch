@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://StageManager2.gd" type="Script" id=1]
 [ext_resource path="res://NotePlayer.gd" type="Script" id=2]
@@ -18,32 +18,43 @@
 [ext_resource path="res://BGMusic1.wav" type="AudioStream" id=16]
 [ext_resource path="res://BGMusicPlayer.gd" type="Script" id=17]
 [ext_resource path="res://assets/speaker.png" type="Texture" id=18]
-[ext_resource path="res://robot-design.png" type="Texture" id=19]
-[ext_resource path="res://standing-up-man-.png" type="Texture" id=20]
+[ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=19]
+[ext_resource path="res://robot-design.png" type="Texture" id=20]
+[ext_resource path="res://standing-up-man-.png" type="Texture" id=21]
 
-[sub_resource type="DynamicFontData" id=9]
+[sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/Roboto-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=2]
 size = 63
-font_data = SubResource( 9 )
+font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFontData" id=2]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/fonts/Roboto-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 64
-font_data = SubResource( 2 )
-
-[sub_resource type="DynamicFontData" id=4]
-font_path = "res://assets/fonts/Roboto-Bold.ttf"
+font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 64
-font_data = SubResource( 4 )
+size = 30
+font_data = ExtResource( 19 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "StepAnimation"
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://assets/fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://assets/fonts/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+font_data = SubResource( 8 )
+
+[sub_resource type="Animation" id=10]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:rect_position")
@@ -124,16 +135,17 @@ margin_right = 935.804
 margin_bottom = 281.229
 
 [node name="Label" type="Label" parent="PopupPanel"]
-margin_left = 17.0
+margin_left = 4.0
 margin_top = 4.0
-margin_right = 246.0
-margin_bottom = 99.0
-custom_fonts/font = SubResource( 10 )
+margin_right = 261.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 2 )
 text = "C"
 align = 1
 valign = 1
 
 [node name="SpritesManager" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 15 )
 
 [node name="Sprite_C" type="Sprite" parent="SpritesManager"]
@@ -274,42 +286,46 @@ margin_left = 24.0
 margin_top = 31.0
 margin_right = 81.0
 margin_bottom = 77.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "0"
 align = 1
 valign = 1
+
+[node name="CorrectAnswer" type="Label" parent="."]
+margin_left = 330.0
+margin_top = 98.0
+margin_right = 547.0
+margin_bottom = 134.0
+custom_fonts/font = SubResource( 5 )
+text = "Correct Answer:"
+
+[node name="YourAnswer" type="Label" parent="."]
+margin_left = 329.682
+margin_top = 53.6783
+margin_right = 509.682
+margin_bottom = 89.6783
+custom_fonts/font = SubResource( 7 )
+text = "Your Answer:"
 
 [node name="Score" type="Label" parent="."]
 margin_left = 904.846
 margin_top = 34.0907
 margin_right = 961.846
 margin_bottom = 80.0907
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 9 )
 text = "0"
 align = 1
 valign = 1
 
-[node name="YourAnswer" type="ColorRect" parent="."]
-margin_left = 360.01
-margin_top = 54.0
-margin_right = 440.01
-margin_bottom = 72.0
-
-[node name="CorrectAnswer" type="ColorRect" parent="."]
-margin_left = 426.973
-margin_top = 56.3265
-margin_right = 523.973
-margin_bottom = 74.3265
-
 [node name="robot-design" type="Sprite" parent="."]
 position = Vector2( 954.233, 483.289 )
 z_index = -1
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="standing-up-man-" type="Sprite" parent="."]
 position = Vector2( 29.4414, 535.186 )
 z_index = -2
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 editor/display_folded = true
@@ -323,7 +339,7 @@ color = Color( 0.698039, 0, 0.717647, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
 autoplay = "StepAnimation"
-anims/StepAnimation = SubResource( 1 )
+anims/StepAnimation = SubResource( 10 )
 [connection signal="note_played" from="PlayerNotePlayer" to="." method="_on_NotePlayer_note_played"]
 [connection signal="note_played" from="PlayerNotePlayer" to="SpritesManager" method="_on_NotePlayer_note_played"]
 [connection signal="tween_completed" from="SpritesManager/Tween" to="SpritesManager" method="_on_Tween_tween_completed"]

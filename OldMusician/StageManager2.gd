@@ -50,14 +50,11 @@ func _on_NotePlayer_note_played(note):
 
 
 func _on_Timer_timeout():
-	var SM = $SpritesManager
 	if evaluation(answer):
 		$Score.text = str(int($Score.text) + 1)
-	else:
-		$YourAnswer.rect_global_position = SM.note_to_sprite[answer[0]].get_node("ColorRect").rect_global_position
-	print(SM.note_to_sprite[quiz[0]].get_node("ColorRect").rect_global_position)
-	$CorrectAnswer.rect_global_position = SM.note_to_sprite[quiz[0]].get_node("ColorRect").rect_global_position
 	$Label.text = str(0)
+	$CorrectAnswer.text = str('Correct Answer: ', quiz)
+	$YourAnswer.text = str('Your Answer: ', answer)
 	quiz()
 	timer.set_wait_time(two_bar_sec)
 	timer.start()

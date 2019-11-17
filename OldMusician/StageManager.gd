@@ -47,11 +47,6 @@ func evaluation(answer):
 			 return false
 	return true
 
-
-func _on_NotePlayer_note_played(note):
-	answer.append(note)
-
-
 func _on_Timer_timeout():
 	if evaluation(answer):
 		$Score.text = str(int($Score.text) + 1)
@@ -61,3 +56,8 @@ func _on_Timer_timeout():
 	quiz()
 	timer.set_wait_time(two_bar_sec)
 	timer.start()
+
+
+
+func _on_PlayerNotePlayer_note_played(note):
+	answer.append(note)
